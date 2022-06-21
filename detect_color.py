@@ -1,20 +1,13 @@
-# import os
-# import glob
 import cv2
 import numpy as np
 
 
-# dir_name = "./images/"
-# dir_length = len(dir_name)
-# files = glob.glob(dir_name + "*.jpg")
-# print(files)
-# print(files[0][dir_length:])
-
-
 def detect_color(file_name, red1_range, red2_range, green_range, save_path_dir):
     img = cv2.imread("./images/" + file_name)
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
+    print(type(img))
+
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     # red
     lower_color = np.array(red1_range[0])
     upper_color = np.array(red1_range[1])
